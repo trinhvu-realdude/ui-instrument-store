@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  username = "";
+  image = "";
+  isLoggedIn = false;
+
   constructor() { }
 
   ngOnInit(): void {
+    const user = JSON.parse(`${localStorage.getItem("user")}`);
+    this.username = user.user_name;
+    this.image = user.image;
+
+    if (this.username == null) {
+      this.isLoggedIn = true;
+    }
   }
 
 }
