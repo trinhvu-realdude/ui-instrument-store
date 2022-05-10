@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -14,10 +15,9 @@ export class LoginComponent implements OnInit {
     password: ""
   });
 
-  isLoggedIn = false;
   isLoginFailed = false;
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) { }
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -34,13 +34,18 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("user", JSON.stringify(user));
         localStorage.setItem("access_token", accessToken);
 
-        this.isLoggedIn = true;
+        this.router.navigate(["/dashboard"]).then(() => {
+          window.location.reload();
+        });
       },
       error: err => {
-        console.log(err);
         this.isLoginFailed = true;
       }
     })
+  }
+
+  exitAlert(): void {
+    this.isLoginFailed = false;
   }
 
 }
