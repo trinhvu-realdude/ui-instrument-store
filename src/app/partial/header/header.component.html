@@ -7,12 +7,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="href" routerLink="/">Home
+                <a class="nav-link" href routerLink="/">Home
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="href" routerLink="/about-us">About us</a>
+                <a class="nav-link" href routerLink="/about-us">About us</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -21,43 +21,43 @@
 
         <ul class="navbar-nav right-side">
             <li class="nav-item active" *ngIf="!isLoggedIn">
-                <a class="nav-link" href="href" routerLink="/register">
+                <a class="nav-link" href="/register" routerLink="/register">
                     Create account
                 </a>
             </li>
 
             <li class="nav-item active" *ngIf="!isLoggedIn">
-                <a class="nav-link" href="href" routerLink="/login">
+                <a class="nav-link" href routerLink="/login">
                     Login
                 </a>
             </li>
 
             <li class="nav-item active" *ngIf="isLoggedIn">
-                <a class="nav-link" href="href">
+                <a class="nav-link" href>
                     <i class="fa fa-shopping-cart" style="font-size:24px"></i>
                 </a>
             </li>
 
             <li class="nav-item active" *ngIf="isLoggedIn">
-                <a class="nav-link" href="href">
+                <a class="nav-link" href>
                     <i class="fa fa-envelope" style="font-size:24px"></i>
                 </a>
             </li>
 
             <li class="nav-item active" *ngIf="isLoggedIn">
-                <a class="nav-link" href="href">
+                <a class="nav-link" href>
                     <i class="fa fa-bell" style="font-size:24px"></i>
                 </a>
             </li>
 
             <li class="nav-item active dropdown" *ngIf="isLoggedIn">
-                <a class="nav-link dropdown-toggle" href="href" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src="{{image}}" alt="avatar" *ngIf="image != null" class="avatar">
                         <img src="../../../assets/user.png" *ngIf="image == null" alt="avatar" class="avatar">
                             {{username}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="href">
+                            <a class="dropdown-item" href>
                                 <i class="fa fa-user"></i>
                                 Profile</a>
                             <div class="dropdown-divider"></div>

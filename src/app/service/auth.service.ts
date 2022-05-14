@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from '../model/User';
 
 const BASE_URL = "http://localhost:5000/api/v1"
 
@@ -20,5 +21,15 @@ export class AuthService {
       email: email,
       password: password
     });
+  }
+
+  register(user: User) {
+    return this.http.post<any>(BASE_URL + "/register", {
+      user_name: user.username,
+      first_name: user.firstname,
+      last_name: user.lastname,
+      email: user.email,
+      password: user.password
+    })
   }
 }

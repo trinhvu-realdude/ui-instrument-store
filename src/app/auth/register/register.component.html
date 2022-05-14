@@ -1,1 +1,55 @@
-<p>register works!</p>
+<div class="container holder">
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <div class="container">
+            <h3>Register</h3>
+            <hr/>
+
+            <label for="username">
+                <b>Username</b>
+            </label>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required="required" formControlName="username"/>
+            <div class="alert alert-danger" role="alert" *ngIf="errorUsernameExisted">
+                Username already existed
+            </div>
+
+            <label for="firstname">
+                <b>First Name</b>
+            </label>
+            <input type="text" placeholder="Enter First Name" name="firstname" id="firstname" required="required" formControlName="firstname"/>
+
+            <label for="lastname">
+                <b>Last Name</b>
+            </label>
+            <input type="text" placeholder="Enter First Name" name="lastname" id="lastname" required="required" formControlName="lastname"/>
+
+            <label for="email">
+                <b>Email</b>
+            </label>
+            <input type="email" placeholder="Enter Email" name="email" id="email" required="required" formControlName="email"/>
+            <div class="alert alert-danger" role="alert" *ngIf="errorEmailExisted">
+                Email already existed
+            </div>
+
+            <label for="psw">
+                <b>Password</b>
+            </label>
+            <input type="password" placeholder="Enter Password" name="psw" id="psw" required="required" formControlName="password">
+
+                <label for="psw-repeat">
+                    <b>Repeat Password</b>
+                </label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required="required" formControlName="confirm"/>
+
+                <hr/>
+                <p>By creating an account you agree to our
+                    <a href="#">Terms & Privacy</a>.</p>
+
+                <button type="submit" class="registerbtn">Register</button>
+            </div>
+
+            <div class="container signin">
+                <p>Already have an account?
+                    <a href="href" routerLink="/login">Sign in</a>.</p>
+            </div>
+        </form>
+    </div>

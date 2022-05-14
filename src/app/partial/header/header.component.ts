@@ -15,9 +15,6 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) {
     const user = JSON.parse(`${localStorage.getItem("user")}`);
 
-    console.log(typeof localStorage.getItem("access_token"));
-    
-
     if (user != null) {
       this.username = user.user_name;
       this.image = user.image;
